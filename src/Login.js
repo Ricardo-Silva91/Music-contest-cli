@@ -10,7 +10,7 @@ class Login extends Component {
         super(props);
         this.state = {
             form: {
-                username: 'strinfffffffffffffffffffffg',
+                username: 'string',
                 password: 'string'
             },
             error_msg: ''

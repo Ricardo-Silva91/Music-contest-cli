@@ -3,7 +3,7 @@
  */
 import $ from "jquery"
 
-exports.backendUrl = 'http://localhost:8080';
+exports.backendUrl = '';
 
 exports.getCookie = function (cname) {
     var name = cname + "=";
@@ -25,7 +25,7 @@ exports.delete_cookie = function (name) {
 };
 
 exports.setCookie = function (cname, value) {
-    document.cookie= cname + ' = ' + value + ' ;path=/;'
+    document.cookie = cname + ' = ' + value + ' ;path=/;'
 }
 
 exports.checkCookieValidity = function (cookie, cb) {
@@ -45,7 +45,7 @@ exports.checkCookieValidity = function (cookie, cb) {
 
 exports.login = function (username, password, cb) {
 
-    let body= {
+    let body = {
         user: username,
         pass: password
     };
@@ -54,4 +54,41 @@ exports.login = function (username, password, cb) {
         function (data, status) {
             cb(data);
         });
+};
+
+exports.voteForCandidate = function (token, songIndex, cb) {
+
+    let body = {
+        token: token,
+        songIndex: songIndex.toString()
+    };
+    //console.log(JSON.stringify(body))
+
+    return $.post(this.backendUrl + '/voteForCandidate', body,
+        function (data, status) {
+            cb(data);
+        });
+};
+
+exports.enterCandidate = function (token, videoId, cb) {
+
+    let body = {
+        token: token,
+        videoId: videoId
+    };
+    console.log(JSON.stringify(body))
+
+    return $.post(this.backendUrl + '/enterCandidate', body,
+        function (data, status) {
+            cb(data);
+        });
+};
+
+exports.secondsToPretty = function (seconds) {
+
+    let hh = Math.floor(seconds / 3600);
+    var mm = Math.floor((seconds - (hh * 3600)) / 60);
+    var ss = seconds - (hh * 3600) - (mm * 60);
+
+    return (hh + ' hh ' + mm + ' mm ' + ss.toFixed(0) + ' ss');
 };

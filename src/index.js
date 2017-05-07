@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import AddVideo from './AddVideo';
 import Login from './Login';
 import './index.css';
 
@@ -30,10 +31,18 @@ switch (pathname) {
             document.getElementById('root')
         );
         break;
-    default:
+    case '/addVideo':
+        ReactDOM.render(
+            <AddVideo cookie={cookie}/>,
+            document.getElementById('root')
+        );
+        break;
+    case '/':
         ReactDOM.render(
             <App cookie={cookie}/>,
             document.getElementById('root')
         );
+        break;
+    default:
         break;
 }

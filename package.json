@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "jquery": "^3.2.1",
+    "lodash": "^4.17.4",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "youtube-api-search": "0.0.5"
   },
   "devDependencies": {
     "react-scripts": "0.9.5"
@@ -15,5 +17,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "proxy": "http://localhost:8080"
 }
