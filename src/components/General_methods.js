@@ -33,7 +33,7 @@ exports.checkCookieValidity = function (cookie, cb) {
     fetch(this.backendUrl + '/getCurrentContest?token=' + cookie)
         .then((response) => response.json())
         .then((responseJson) => {
-            console.log(responseJson.result !== 'fail');
+            //console.log(responseJson.result !== 'fail');
             //return responseJson.result !== 'fail';
             cb(responseJson.result !== 'fail');
         })

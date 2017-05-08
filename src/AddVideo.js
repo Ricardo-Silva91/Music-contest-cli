@@ -51,24 +51,26 @@ class AddVideo extends Component {
         return (
             <div className="App">
                 <div className="App-header">
-                    <img
-                        src='http://i2.wp.com/nktva42l4am2fq6f1bf2dz43-wpengine.netdna-ssl.com/wp-content/uploads/2015/06/MultiDoge-e1434554708695.png'
-                        className="App-logo" alt="logo"/>
+                    <a href="/">
+                        <img
+                            src='http://i2.wp.com/nktva42l4am2fq6f1bf2dz43-wpengine.netdna-ssl.com/wp-content/uploads/2015/06/MultiDoge-e1434554708695.png'
+                            className="App-logo" alt="logo"/>
+                    </a>
                     <h2>Video Search</h2>
                 </div>
                 <div>
                     <br/>
                     <SearchBar onSearchTermChange={videoSearch}/>
                     <br/>
-                    <h1>{this.state.error_msg}</h1>
+                    <h1 className="error">{this.state.error_msg}</h1>
                     <VideoDetail video={this.state.selectedVideo} enterCandidate={
-                        (videoId) => general_methods.enterCandidate(this.state.cookie,videoId, (response) => {
+                        (videoId) => general_methods.enterCandidate(this.state.cookie, videoId, (response) => {
                             if (response.result === 'fail') {
                                 this.setState({error_msg: response.message})
                             }
                             else {
                                 console.log('entered cendidate');
-                                window.location.href= '/';
+                                window.location.href = '/';
                                 //do something
                             }
                         })

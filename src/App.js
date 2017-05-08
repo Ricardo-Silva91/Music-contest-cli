@@ -21,7 +21,7 @@ class App extends Component {
         return (
             <div className="App">
                 <div className="App-header">
-                    <img src='http://i2.wp.com/nktva42l4am2fq6f1bf2dz43-wpengine.netdna-ssl.com/wp-content/uploads/2015/06/MultiDoge-e1434554708695.png' className="App-logo" alt="logo"/>
+                    <img href="/" src='http://i2.wp.com/nktva42l4am2fq6f1bf2dz43-wpengine.netdna-ssl.com/wp-content/uploads/2015/06/MultiDoge-e1434554708695.png' className="App-logo" alt="logo"/>
                     <h2>Welcome to Music Contest</h2>
                 </div>
                 <div>

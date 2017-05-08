@@ -49,13 +49,29 @@ export default class ContestSection extends Component {
                 let voteFound = false, postFound = false;
 
                 for (let i = 0; i < responseJson.contest.songs.length; i++) {
-                    console.log(JSON.stringify(responseJson.contest.songs[i].score));
+                    //console.log(this.state.myUserId);
+                    //console.log(JSON.stringify(responseJson.contest.songs[i].score));
+
+                    for(let j=0; j<responseJson.contest.songs[i].score.length;j++)
+                    {
+                        //console.log(this.state.myUserId + ' ' + responseJson.contest.songs[i].score[j].userId);
+                        if(this.state.myUserId === responseJson.contest.songs[i].score[j].userId)
+                        {
+                            this.setState({myVotedSongId: responseJson.contest.songs[i].id});
+                            voteFound = true;
+                            break;
+                        }
+                    }
+
+                    /*
                     if (responseJson.contest.songs[i].score.findIndex((u) => {
                             return u.userId === this.state.myUserId;
                         }) !== -1) {
                         this.setState({myVotedSongId: responseJson.contest.songs[i].id});
                         voteFound = true;
                     }
+                    */
+
                     if (responseJson.contest.songs[i].owner === this.state.meUser.user) {
                         this.setState({myPost: responseJson.contest.songs[i].id});
                         postFound = true;
@@ -89,7 +105,7 @@ export default class ContestSection extends Component {
                     }
                 }
 
-                this.setState({usersData: responseJson, myUserId: myId, meUser: responseJson[myId]});
+                this.setState({usersData: responseJson, myUserId: responseJson[myId].userId, meUser: responseJson[myId]});
 
             })
             .catch((error) => {
@@ -121,7 +137,7 @@ export default class ContestSection extends Component {
                 this.setState({error_msg: response.message})
             }
             else {
-                console.log('voted');
+                //console.log('voted');
                 this.getCurrentContest();
                 //do something
             }
