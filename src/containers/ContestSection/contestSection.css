@@ -1,0 +1,54 @@
+#mt_options_section {
+    overflow: auto;
+}
+
+.videoThumb * {
+    margin: 0;
+    padding: 0;
+}
+
+.videoThumb div {
+    height:750px;
+    overflow: scroll;
+}
+
+.videoThumb ul {
+    list-style-type: none;
+    width: 100%;
+}
+
+.videoThumb h3 {
+    font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+}
+
+.videoThumb li img {
+    float: left;
+    margin: 0 15px 0 0;
+    width: 50%;
+}
+
+.videoThumb li p {
+    font: 200 12px/1.5 Georgia, Times New Roman, serif;
+}
+
+.videoThumb li {
+    /*width: 75%;*/
+    padding: 10px;
+    overflow: auto;
+}
+
+.videoThumb li:hover {
+    background: #eee;
+    cursor: pointer;
+}
+
+.videoThumb .videoListElement {
+}
+
+.videoThumb .myPost {
+    background-color: darkgoldenrod;
+}
+
+.videoThumb .myVote {
+    background-color: darkseagreen;
+}

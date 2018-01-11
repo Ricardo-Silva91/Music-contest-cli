@@ -1,16 +1,18 @@
 {
-  "name": "music_contest_frontend",
+  "name": "music_contest_cli",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "jquery": "^3.2.1",
-    "lodash": "^4.17.4",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.8",
+    "react-scripts": "1.0.17",
+    "redux": "^3.7.2",
+    "redux-persist": "^5.4.0",
+    "redux-thunk": "^2.2.0",
     "youtube-api-search": "0.0.5"
-  },
-  "devDependencies": {
-    "react-scripts": "0.9.5"
   },
   "scripts": {
     "start": "react-scripts start",
